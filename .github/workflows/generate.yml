@@ -2,7 +2,7 @@ name: Generate Token List
 
 on:
   push:
-    branches: [main]
+    branches: [usdt0]
 
 jobs:
   generate:
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          ref: main
+          ref: usdt0
 
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
