@@ -10,7 +10,7 @@ import { TokenData } from './types'
 /**
  * Base URL where static assets are hosted.
  */
-const BASE_URL = 'https://token-list.mantle.xyz'
+const BASE_URL = 'https://mantle-token-lists-dev.vercel.app'
 
 /**
  * Generates a token list from the data in the data folder.
