@@ -10,7 +10,7 @@ import { TokenData } from './types'
 /**
  * Base URL where static assets are hosted.
  */
-const BASE_URL = 'https://token-list.mantle.xyz'
+const BASE_URL = 'https://mantle-token-lists-dev.vercel.app'
 
 /**
  * Generates a token list from the data in the data folder.
@@ -38,6 +38,16 @@ export const generate = (datadir: string) => {
       return Object.entries(data.tokens).map(([chain, token]) => {
         const extensions: any = {}
         switch (true) {
+          case !!data?.extensions?.oft:
+            if (token.adapter) {
+              extensions.oft = {
+                adapter: token.adapter,
+              }
+            } else {
+              extensions.oft = true
+            }
+            break
+
           case !!data?.extensions?.thirdparty:
             extensions.thirdparty = data.extensions.thirdparty
             break
